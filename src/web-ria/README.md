@@ -1,0 +1,1 @@
+Web RIA application - single page application(JS) where client call api(AJAX) and the server responses in JSON

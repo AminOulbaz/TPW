@@ -1,0 +1,1 @@
+Web HTML pure application - no javascript and all pages are generated per request using templates

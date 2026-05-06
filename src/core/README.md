@@ -1,0 +1,1 @@
+Central directory where contains business rules, entities of the domain for both applications (pure html or ria) 
