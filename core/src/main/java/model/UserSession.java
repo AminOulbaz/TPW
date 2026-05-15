@@ -1,12 +1,14 @@
-package beans;
+package model;
 
-public abstract class Staff {
+public class UserSession {
     private String username;
-    private String password;
     private String name;
     private String surname;
-    private String photo; //path
-    private String type; //admin or tech
+    private String staffType; // ADMIN o TECH
+    private String activeRole; // ADMIN, MANAGER or COLLABORATOR
+
+    public UserSession() {
+    }
 
     public String getUsername() {
         return username;
@@ -14,14 +16,6 @@ public abstract class Staff {
 
     public void setUsername(String username) {
         this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
     public String getName() {
@@ -40,19 +34,19 @@ public abstract class Staff {
         this.surname = surname;
     }
 
-    public String getPhoto() {
-        return photo;
+    public String getStaffType() {
+        return staffType;
     }
 
-    public void setPhoto(String photo) {
-        this.photo = photo;
+    public void setStaffType(String staffType) {
+        this.staffType = staffType;
     }
 
-    public String getType() {
-        return type;
+    public String getActiveRole() {
+        return activeRole;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setActiveRole(String activeRole) {
+        this.activeRole = activeRole;
     }
 }

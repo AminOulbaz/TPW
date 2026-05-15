@@ -4,6 +4,8 @@ public class Collaboration {
     private String collaborator;
     private int task;
     private int month;
+    //hours expected defined by the manager
+    private int expectedHours;
     private int effectiveHours;
 
     public Collaboration() {
@@ -31,6 +33,14 @@ public class Collaboration {
 
     public void setMonth(int month) {
         this.month = month;
+    }
+
+    public int getExpectedHours() {
+        return expectedHours;
+    }
+
+    public void setExpectedHours(int expectedHours) {
+        this.expectedHours = expectedHours;
     }
 
     public int getEffectiveHours() {

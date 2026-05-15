@@ -8,8 +8,6 @@ public class Task {
     //amplitude(endMonth-beginMonth) less or equal of the work package's period
     private int beginMonth;
     private int endMonth;
-    //hours expected defined by the manager
-    private int expectedHours;
     private String orderedId;
 
     public Task() {
@@ -61,14 +59,6 @@ public class Task {
 
     public void setEndMonth(int endMonth) {
         this.endMonth = endMonth;
-    }
-
-    public int getExpectedHours() {
-        return expectedHours;
-    }
-
-    public void setExpectedHours(int expectedHours) {
-        this.expectedHours = expectedHours;
     }
 
     public String getOrderedId() {
