@@ -10,14 +10,14 @@ import java.util.HashSet;
 @ApplicationScoped
 public class ProjectDao extends GroundDao {
     //insert a new project into db
-    public Project insert(Project project) throws SQLException {
+    public Project create(Project project){
         try(Connection connection = dataSource.getConnection()){
             PreparedStatement psmt = connection.prepareStatement(
                     "insert into project values(?,?,?,?,?,?)", Statement.RETURN_GENERATED_KEYS);
             psmt.setString(1, project.getTitle());
             psmt.setString(2, project.getDescription());
             psmt.setInt(3, project.getPeriod());
-            psmt.setString(4, "created");
+            psmt.setString(4, project.getStatus());
             psmt.setString(5, project.getAdminUsername());
             psmt.setString(6, project.getManagerUsername());
 

@@ -1,5 +1,10 @@
 package beans;
 
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashSet;
+
 public class Project {
     private int id;
     private String title;
@@ -69,5 +74,18 @@ public class Project {
 
     public void setManagerUsername(String managerUsername) {
         this.managerUsername = managerUsername;
+    }
+
+    public boolean isValid(){
+        String[] statuses = {"CREATED", "ASSIGNED", "CONCLUDED"};
+        if(title != null &&
+                description != null &&
+                period > 0 &&
+                Arrays.stream(statuses).anyMatch(s -> s.equals(status)) &&
+                adminUsername != null &&
+                managerUsername != null){
+            return true;
+        }
+        return false;
     }
 }

@@ -13,17 +13,19 @@ import java.util.HashSet;
 @ApplicationScoped
 public class StaffDao extends GroundDao {
     //insert a new user into staff
-    public void insert(Staff staff, String type) {
+    public void insert(String username, String password,
+                       String name, String surname,
+                       String photoLocation, String typeStaff) {
         try(Connection connection = dataSource.getConnection()){
             PreparedStatement psmt = connection.prepareStatement(
                     "insert into staff values(?,?,?,?,?,?)"
             );
-            psmt.setString(1, staff.getUsername());
-            psmt.setString(2,staff.getName());
-            psmt.setString(2,staff.getSurname());
-            psmt.setString(4, staff.getPassword());
-            psmt.setString(5,staff.getPhoto());
-            psmt.setString(6, type);
+            psmt.setString(1, username);
+            psmt.setString(2, name);
+            psmt.setString(2, surname);
+            psmt.setString(4, password);
+            psmt.setString(5, photoLocation);
+            psmt.setString(6, typeStaff);
 
             psmt.execute();
         } catch (SQLException e) {
@@ -59,10 +61,10 @@ public class StaffDao extends GroundDao {
             ResultSet rs = psmt.executeQuery();
             if(rs.next()) {
                 return StaffFactory.createStaff(
+                        rs.getString("type"),
                         username,
                         rs.getString("name"),
-                        rs.getString("surname"),
-                        rs.getString("type")
+                        rs.getString("surname")
                 );
             }
         } catch (SQLException e) {

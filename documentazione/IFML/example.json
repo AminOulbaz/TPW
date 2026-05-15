@@ -1,0 +1,243 @@
+{
+  "elements": [
+    {
+      "attributes": { "name": "Area Amministratore", "landmark": true, "default": false, "xor": false },
+      "metadata": { "graphics": { "position": { "x": -1000, "y": -900 }, "size": { "height": 600, "width": 1200 } } },
+      "id": "admin-area",
+      "type": "ifml.ViewContainer"
+    },
+    {
+      "attributes": { "name": "HOME AMMINISTRATORE", "default": true, "landmark": false, "xor": false },
+      "metadata": { "graphics": { "position": { "x": -950, "y": -850 }, "size": { "height": 500, "width": 600 } } },
+      "id": "admin-home",
+      "type": "ifml.ViewContainer"
+    },
+    {
+      "attributes": { "name": "VERIFICA PROGETTI", "default": false, "landmark": false, "xor": false },
+      "metadata": { "graphics": { "position": { "x": -300, "y": -850 }, "size": { "height": 500, "width": 450 } } },
+      "id": "admin-verifica",
+      "type": "ifml.ViewContainer"
+    },
+    {
+      "attributes": { "name": "Form Creazione Progetto", "stereotype": "form", "fields": ["Titolo", "Durata", "Responsabile"] },
+      "metadata": { "graphics": { "position": { "x": -900, "y": -800 }, "size": { "height": 100, "width": 180 } } },
+      "id": "admin-form-proj",
+      "type": "ifml.ViewComponent"
+    },
+    {
+      "attributes": { "name": "SALVA PROGETTO" },
+      "metadata": { "graphics": { "position": { "x": -720, "y": -750 }, "name": { "horizontal": "right-outer", "vertical": "top" } } },
+      "id": "admin-ev-proj",
+      "type": "ifml.Event"
+    },
+    {
+      "attributes": { "name": "Form Creazione WP", "stereotype": "form", "fields": ["Progetto", "Titolo", "Mese Inizio", "Mese Fine"] },
+      "metadata": { "graphics": { "position": { "x": -900, "y": -650 }, "size": { "height": 100, "width": 180 } } },
+      "id": "admin-form-wp",
+      "type": "ifml.ViewComponent"
+    },
+    {
+      "attributes": { "name": "SALVA WP" },
+      "metadata": { "graphics": { "position": { "x": -720, "y": -600 }, "name": { "horizontal": "right-outer", "vertical": "top" } } },
+      "id": "admin-ev-wp",
+      "type": "ifml.Event"
+    },
+    {
+      "attributes": { "name": "Form Creazione Task", "stereotype": "form", "fields": ["Progetto", "WP", "Titolo", "Descrizione", "Inizio", "Fine"] },
+      "metadata": { "graphics": { "position": { "x": -900, "y": -500 }, "size": { "height": 110, "width": 180 } } },
+      "id": "admin-form-task",
+      "type": "ifml.ViewComponent"
+    },
+    {
+      "attributes": { "name": "SALVA TASK" },
+      "metadata": { "graphics": { "position": { "x": -720, "y": -450 }, "name": { "horizontal": "right-outer", "vertical": "top" } } },
+      "id": "admin-ev-task",
+      "type": "ifml.Event"
+    },
+    {
+      "attributes": { "name": "Gerarchia Progetti", "stereotype": "list", "fields": ["Progetto", "Totale Ore"] },
+      "metadata": { "graphics": { "position": { "x": -250, "y": -750 }, "size": { "height": 150, "width": 200 } } },
+      "id": "admin-list-tree",
+      "type": "ifml.ViewComponent"
+    },
+    {
+      "attributes": { "name": "/api/project/create", "parameters": ["Titolo", "Durata", "Responsabile"], "results": [] },
+      "metadata": { "graphics": { "position": { "x": -450, "y": -780 }, "size": { "height": 60, "width": 130 } } },
+      "id": "admin-act-proj",
+      "type": "ifml.Action"
+    },
+
+    {
+      "attributes": { "name": "Area Responsabile", "landmark": true, "default": false, "xor": false },
+      "metadata": { "graphics": { "position": { "x": -1000, "y": -150 }, "size": { "height": 600, "width": 1550 } } },
+      "id": "resp-area",
+      "type": "ifml.ViewContainer"
+    },
+    {
+      "attributes": { "name": "HOME RESPONSABILE", "default": true, "landmark": false, "xor": false },
+      "metadata": { "graphics": { "position": { "x": -950, "y": -100 }, "size": { "height": 500, "width": 450 } } },
+      "id": "resp-home",
+      "type": "ifml.ViewContainer"
+    },
+    {
+      "attributes": { "name": "MONITORAGGIO PROGETTI", "default": false, "landmark": false, "xor": false },
+      "metadata": { "graphics": { "position": { "x": -450, "y": -100 }, "size": { "height": 500, "width": 450 } } },
+      "id": "resp-mon-proj",
+      "type": "ifml.ViewContainer"
+    },
+    {
+      "attributes": { "name": "MONITORAGGIO COLLABORATORI", "default": false, "landmark": false, "xor": false },
+      "metadata": { "graphics": { "position": { "x": 50, "y": -100 }, "size": { "height": 500, "width": 450 } } },
+      "id": "resp-mon-coll",
+      "type": "ifml.ViewContainer"
+    },
+    {
+      "attributes": { "name": "Form Assegnazione", "stereotype": "form", "fields": ["Progetto", "WP", "Task", "Ore Previste", "Collaboratori"] },
+      "metadata": { "graphics": { "position": { "x": -900, "y": -50 }, "size": { "height": 110, "width": 180 } } },
+      "id": "resp-form-ass",
+      "type": "ifml.ViewComponent"
+    },
+    {
+      "attributes": { "name": "SALVA" },
+      "metadata": { "graphics": { "position": { "x": -720, "y": 0 }, "name": { "horizontal": "right-outer", "vertical": "top" } } },
+      "id": "resp-ev-salva",
+      "type": "ifml.Event"
+    },
+    {
+      "attributes": { "name": "ASSEGNA PROGETTO" },
+      "metadata": { "graphics": { "position": { "x": -720, "y": 150 }, "name": { "horizontal": "right-outer", "vertical": "top" } } },
+      "id": "resp-ev-assegna",
+      "type": "ifml.Event"
+    },
+    {
+      "attributes": { "name": "Tabella Ore Previste/Lavorate", "stereotype": "list", "fields": ["Task", "Ore Previste", "Ore Lavorate"] },
+      "metadata": { "graphics": { "position": { "x": -400, "y": 50 }, "size": { "height": 110, "width": 200 } } },
+      "id": "resp-tab-proj",
+      "type": "ifml.ViewComponent"
+    },
+    {
+      "attributes": { "name": "CONCLUDI" },
+      "metadata": { "graphics": { "position": { "x": -200, "y": 100 }, "name": { "horizontal": "right-outer", "vertical": "top" } } },
+      "id": "resp-ev-concludi",
+      "type": "ifml.Event"
+    },
+    {
+      "attributes": { "name": "/api/project/concludi", "parameters": ["ProgettoID"], "results": [] },
+      "metadata": { "graphics": { "position": { "x": -50, "y": 100 }, "size": { "height": 60, "width": 130 } } },
+      "id": "resp-act-concludi",
+      "type": "ifml.Action"
+    },
+    {
+      "attributes": { "name": "Tabella Ore Collaboratore", "stereotype": "list", "fields": ["Progetto", "Ore Mese per Mese"] },
+      "metadata": { "graphics": { "position": { "x": 100, "y": 50 }, "size": { "height": 110, "width": 200 } } },
+      "id": "resp-tab-coll",
+      "type": "ifml.ViewComponent"
+    },
+
+    {
+      "attributes": { "name": "Area Collaboratore", "landmark": true, "default": false, "xor": false },
+      "metadata": { "graphics": { "position": { "x": -1000, "y": 550 }, "size": { "height": 550, "width": 1100 } } },
+      "id": "collab-area",
+      "type": "ifml.ViewContainer"
+    },
+    {
+      "attributes": { "name": "HOME COLLABORATORE", "default": true, "landmark": false, "xor": false },
+      "metadata": { "graphics": { "position": { "x": -950, "y": 600 }, "size": { "height": 450, "width": 950 } } },
+      "id": "collab-home",
+      "type": "ifml.ViewContainer"
+    },
+    {
+      "attributes": { "name": "Elenco Progetti", "stereotype": "list", "fields": ["Progetto"] },
+      "metadata": { "graphics": { "position": { "x": -900, "y": 650 }, "size": { "height": 80, "width": 140 } } },
+      "id": "collab-list-proj",
+      "type": "ifml.ViewComponent"
+    },
+    {
+      "attributes": { "name": "Seleziona" },
+      "metadata": { "graphics": { "position": { "x": -760, "y": 690 }, "name": { "horizontal": "right-outer", "vertical": "top" } } },
+      "id": "collab-ev-proj",
+      "type": "ifml.Event"
+    },
+    {
+      "attributes": { "name": "Elenco WP", "stereotype": "list", "fields": ["WP"] },
+      "metadata": { "graphics": { "position": { "x": -600, "y": 650 }, "size": { "height": 80, "width": 140 } } },
+      "id": "collab-list-wp",
+      "type": "ifml.ViewComponent"
+    },
+    {
+      "attributes": { "name": "Seleziona" },
+      "metadata": { "graphics": { "position": { "x": -460, "y": 690 }, "name": { "horizontal": "right-outer", "vertical": "top" } } },
+      "id": "collab-ev-wp",
+      "type": "ifml.Event"
+    },
+    {
+      "attributes": { "name": "Dettaglio Task", "stereotype": "details", "fields": ["Titolo", "Mesi", "Ore Previste"] },
+      "metadata": { "graphics": { "position": { "x": -250, "y": 650 }, "size": { "height": 90, "width": 160 } } },
+      "id": "collab-det-task",
+      "type": "ifml.ViewComponent"
+    },
+    {
+      "attributes": { "name": "Form Rendicontazione", "stereotype": "form", "fields": ["Mese", "Ore Lavorate"] },
+      "metadata": { "graphics": { "position": { "x": -250, "y": 800 }, "size": { "height": 90, "width": 160 } } },
+      "id": "collab-form-ore",
+      "type": "ifml.ViewComponent"
+    },
+    {
+      "attributes": { "name": "SALVA" },
+      "metadata": { "graphics": { "position": { "x": -90, "y": 850 }, "name": { "horizontal": "right-outer", "vertical": "top" } } },
+      "id": "collab-ev-salva",
+      "type": "ifml.Event"
+    },
+    {
+      "attributes": { "name": "/api/ore/registra", "parameters": ["Mese", "Ore", "TaskID"], "results": [] },
+      "metadata": { "graphics": { "position": { "x": 100, "y": 830 }, "size": { "height": 60, "width": 140 } } },
+      "id": "collab-act-ore",
+      "type": "ifml.Action"
+    },
+    { "attributes": { "bindings": [] }, "metadata": { "graphics": {} }, "id": "f1-admin-proj", "type": "ifml.NavigationFlow" },
+    { "attributes": { "bindings": [] }, "metadata": { "graphics": {} }, "id": "f2-resp-concludi", "type": "ifml.NavigationFlow" },
+    { "attributes": { "bindings": [] }, "metadata": { "graphics": {} }, "id": "f3-collab-p-w", "type": "ifml.NavigationFlow" },
+    { "attributes": { "bindings": [] }, "metadata": { "graphics": {} }, "id": "f4-collab-w-t", "type": "ifml.NavigationFlow" },
+    { "attributes": { "bindings": [] }, "metadata": { "graphics": {} }, "id": "f5-collab-salva", "type": "ifml.NavigationFlow" }
+  ],
+  "relations": [
+    { "type": "hierarchy", "parent": "admin-area", "child": "admin-home" },
+    { "type": "hierarchy", "parent": "admin-area", "child": "admin-verifica" },
+    { "type": "hierarchy", "parent": "admin-home", "child": "admin-form-proj" },
+    { "type": "hierarchy", "parent": "admin-form-proj", "child": "admin-ev-proj" },
+    { "type": "hierarchy", "parent": "admin-home", "child": "admin-form-wp" },
+    { "type": "hierarchy", "parent": "admin-form-wp", "child": "admin-ev-wp" },
+    { "type": "hierarchy", "parent": "admin-home", "child": "admin-form-task" },
+    { "type": "hierarchy", "parent": "admin-form-task", "child": "admin-ev-task" },
+    { "type": "hierarchy", "parent": "admin-verifica", "child": "admin-list-tree" },
+    { "type": "source", "flow": "f1-admin-proj", "source": "admin-ev-proj" },
+    { "type": "target", "flow": "f1-admin-proj", "target": "admin-act-proj" },
+
+    { "type": "hierarchy", "parent": "resp-area", "child": "resp-home" },
+    { "type": "hierarchy", "parent": "resp-area", "child": "resp-mon-proj" },
+    { "type": "hierarchy", "parent": "resp-area", "child": "resp-mon-coll" },
+    { "type": "hierarchy", "parent": "resp-home", "child": "resp-form-ass" },
+    { "type": "hierarchy", "parent": "resp-form-ass", "child": "resp-ev-salva" },
+    { "type": "hierarchy", "parent": "resp-home", "child": "resp-ev-assegna" },
+    { "type": "hierarchy", "parent": "resp-mon-proj", "child": "resp-tab-proj" },
+    { "type": "hierarchy", "parent": "resp-tab-proj", "child": "resp-ev-concludi" },
+    { "type": "hierarchy", "parent": "resp-mon-coll", "child": "resp-tab-coll" },
+    { "type": "source", "flow": "f2-resp-concludi", "source": "resp-ev-concludi" },
+    { "type": "target", "flow": "f2-resp-concludi", "target": "resp-act-concludi" },
+
+    { "type": "hierarchy", "parent": "collab-area", "child": "collab-home" },
+    { "type": "hierarchy", "parent": "collab-home", "child": "collab-list-proj" },
+    { "type": "hierarchy", "parent": "collab-list-proj", "child": "collab-ev-proj" },
+    { "type": "hierarchy", "parent": "collab-home", "child": "collab-list-wp" },
+    { "type": "hierarchy", "parent": "collab-list-wp", "child": "collab-ev-wp" },
+    { "type": "hierarchy", "parent": "collab-home", "child": "collab-det-task" },
+    { "type": "hierarchy", "parent": "collab-home", "child": "collab-form-ore" },
+    { "type": "hierarchy", "parent": "collab-form-ore", "child": "collab-ev-salva" },
+    { "type": "source", "flow": "f3-collab-p-w", "source": "collab-ev-proj" },
+    { "type": "target", "flow": "f3-collab-p-w", "target": "collab-list-wp" },
+    { "type": "source", "flow": "f4-collab-w-t", "source": "collab-ev-wp" },
+    { "type": "target", "flow": "f4-collab-w-t", "target": "collab-det-task" },
+    { "type": "source", "flow": "f5-collab-salva", "source": "collab-ev-salva" },
+    { "type": "target", "flow": "f5-collab-salva", "target": "collab-act-ore" }
+  ]
+}

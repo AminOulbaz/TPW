@@ -10,7 +10,7 @@ public class TechnicalStaff extends Staff {
         this.setUsername(username);
         this.setName(name);
         this.setSurname(surname);
-        this.setType("TECH"); // collaborator is in technical staff
+        this.setType("TECH"); // manager and collaborator is in technical staff
     }
 
     public String getRoleContext() {
